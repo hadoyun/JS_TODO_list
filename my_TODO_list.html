@@ -4,13 +4,56 @@
     <meta name="viewport" content="width=`, initial-scale=1.0">
     <title>TODO list</title>
 </head>
+<style>
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 500px;
+}
+ul li{
+    border: 1px solid #ccc;
+    background-color: aqua;
+    padding: 5px 10px;
+}
+ </style>
 <body>
     <h1>to do List </h1>
         <button id = "btnAdd"> NEW Item </button>
-    <u1 id = "todoist">
-        <li><input type = "checkbox"/><span>write First item</span> </li>
-    </u1>
+    <ul id = "todoList">
+        <li><input type = "checkBox"/><span>write First item</span> </li>
+    </ul>
 
     <script src = "main.js"></script>
 </body>
+<script>
+    // var btn_new = document.getElementById('btnAdd');
+    // //id를주고 이런 식으로도 onclick 이벤트를 넣을 수 있다.
+    // btn_new.onclick = addNewItem;
+
+    // //아이템을 추가하는 함수
+    // function addNewItem()
+    // {
+    //     //동적으로 새로운 element를 반환한다.  
+    //     var list_item = document.createElement('li');
+    //     list_item.innerText = "Hello";
+    //     
+    //     var list = document.getElementById("todoList");
+    //     //새로운 단락 요소를 생성하고 문서에 있는 body 끝에 요소를 붙인다.
+    //     list.appendChild(list_item);
+    // }
+
+    var btn_new = document.getElementById('btnAdd');
+    
+    btn_new.onclick = function(){
+        addNewItem(document.getElementById("todoList"));
+    };
+
+    function addNewItem(list) {
+        var list_item = document.createElement('li');
+        list_item.innerText = "Start!";
+        list.append(list_item);
+    }   
+</script>
+
 </html>
